@@ -50,7 +50,7 @@ def np_addmatrix(M1,M2):
     result = np.add(matrix1,matrix2)
     result = result.flatten('F')
     print(result)
-    return json.dumps(list(result))
+    return list(result)
 
 
 if __name__ == '__main__':
