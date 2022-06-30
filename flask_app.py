@@ -1,9 +1,26 @@
 from flask import Flask
 import ghhops_server as hs
-
+import csv
+import requests
+import os
 
 app = Flask(__name__)
 hops = hs.Hops(app)
+
+
+file_name = 'building-points.csv'
+CSV_URL = 'https://data.townofcary.org/explore/dataset/building-points/download/?format=csv&disjunctive.building_type=true&disjunctive.building_sub_type=true&disjunctive.bldgstyle=true&disjunctive.yearbuilt=true&disjunctive.storyheight=true&disjunctive.basement=true&disjunctive.utilities=true&refine.building_sub_type=2+Family&refine.building_sub_type=3+Family&refine.building_sub_type=4+Family&refine.building_sub_type=Multi-Family&refine.building_sub_type=Single+Family&refine.building_type=Residential&timezone=Australia/Sydney&lang=en&use_labels_for_header=true&csv_separator=%3B'
+
+
+with requests.Session() as s:
+    download = s.get(CSV_URL)
+
+    decoded_content = download.content.decode('utf-8')
+
+    cr = csv.reader(decoded_content.splitlines(), delimiter=',')
+    my_list = list(cr)
+    for row in my_list:
+        print(row)
 
 @app.route("/")
 def hello_world():
