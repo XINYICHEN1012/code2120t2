@@ -9,7 +9,7 @@ hops = hs.Hops(app)
 
 
 file_name = 'building-points.csv'
-CSV_URL = 'https://data.townofcary.org/explore/dataset/building-points/download/?format=csv&disjunctive.building_type=true&disjunctive.building_sub_type=true&disjunctive.bldgstyle=true&disjunctive.yearbuilt=true&disjunctive.storyheight=true&disjunctive.basement=true&disjunctive.utilities=true&refine.building_sub_type=2+Family&refine.building_sub_type=3+Family&refine.building_sub_type=4+Family&refine.building_sub_type=Multi-Family&refine.building_sub_type=Single+Family&refine.building_type=Residential&timezone=Australia/Sydney&lang=en&use_labels_for_header=true&csv_separator=%3B'
+CSV_URL = 'https://data.townofcary.org/api/records/1.0/search/?dataset=building-points&q=&rows=20&sort=-rooms&facet=building_type&facet=building_sub_type&facet=bldgstyle&facet=yearbuilt&facet=storyheight&facet=basement&facet=utilities&refine.building_sub_type=2+Family&refine.building_sub_type=3+Family&refine.building_sub_type=4+Family&refine.building_sub_type=Multi-Family&refine.building_sub_type=Single+Family&refine.building_type=Residential'
 
 
 with requests.Session() as s:
