@@ -41,7 +41,7 @@ def hello_world():
 
 
 @app.route("/urlend")
-def np_addmatrix(M1,M2):
+def np_addMatrix(M1,M2):
     import numpy as np
     import json
     matrix1 = np.array(M1).reshape((2,2))
