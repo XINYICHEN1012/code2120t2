@@ -18,7 +18,7 @@ def hello_world():
         hs.HopsNumber("M1","M1","M1"),
         hs.HopsNumber("M2","M2","M2"),
     ],
-    output=[
+    outputs=[
         hs.HopsNumber("M3","M3","M3")
     ]
 )
