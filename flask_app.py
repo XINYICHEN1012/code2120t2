@@ -34,8 +34,7 @@ def np_addmatrix(M1,M2):
     result = np.add(matrix1,matrix2)
     return result
 
-def main():
-    app.run()
+
 
 if __name__ == '__main__':
     main()
