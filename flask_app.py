@@ -11,9 +11,9 @@ def hello_world():
     return "<p>Hello, I am Shandy from UNSW CODE2120 </p>"
 
 @hops.component(
-    "/name1",
-    name= "name1",
-    description="name1",
+    "/np_addMatrix",
+    name= "np_addMatrix",
+    description="np_addMatrix",
     inputs=[
         hs.HopsNumber("M1","M1","M1"),
         hs.HopsNumber("M2","M2","M2"),
