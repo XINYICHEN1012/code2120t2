@@ -7,7 +7,8 @@ import os
 app = Flask(__name__)
 hops = hs.Hops(app)
 
-
+url = 'https://data.townofcary.org/api/records/1.0/search/?dataset=building-points&q=&rows=20&sort=-rooms&facet=building_type&facet=building_sub_type&facet=bldgstyle&facet=yearbuilt&facet=storyheight&facet=basement&facet=utilities&refine.building_sub_type=2+Family&refine.building_sub_type=3+Family&refine.building_sub_type=4+Family&refine.building_sub_type=Multi-Family&refine.building_sub_type=Single+Family&refine.building_type=Residential'
+r = requests.get(url)
 
 @app.route("/")
 def hello_world():
@@ -42,8 +43,7 @@ def hello_world():
     ]
 )
 
-url = 'https://data.townofcary.org/api/records/1.0/search/?dataset=building-points&q=&rows=20&sort=-rooms&facet=building_type&facet=building_sub_type&facet=bldgstyle&facet=yearbuilt&facet=storyheight&facet=basement&facet=utilities&refine.building_sub_type=2+Family&refine.building_sub_type=3+Family&refine.building_sub_type=4+Family&refine.building_sub_type=Multi-Family&refine.building_sub_type=Single+Family&refine.building_type=Residential'
-r = request.get(url)
+
 
 @app.route("/urlend")
 def np_addMatrix(M1,M2):
