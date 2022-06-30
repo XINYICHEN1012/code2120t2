@@ -15,11 +15,11 @@ def hello_world():
     name= "name1",
     description="name1",
     inputs=[
-        hs.Hopsnumber("M1","M1","M1"),
-        hs.Hopsnumber("M2","M2","M2"),
+        hs.HopsNumber("M1","M1","M1"),
+        hs.HopsNumber("M2","M2","M2"),
     ],
     output=[
-        hs.Hopsnumber("M3","M3","M3")
+        hs.HopsNumber("M3","M3","M3")
     ]
 )
 
