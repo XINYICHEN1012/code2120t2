@@ -1,5 +1,6 @@
 from flask import Flask
 from numpy import geomspace
+from ghhops_server import *
 import ghhops_server as hs
 
 
@@ -10,13 +11,13 @@ def hello_world():
     return "<p>Hello, I am Shandy from UNSW CODE2120 </p>"
 
 @hops.component(
-    "/name1"
+    "/name1",
     name= "name1",
-    description="name1"
+    description="name1",
     inputs=[
-        hs.Hopnumber("M1","M1","M1")
-        hs.Hopnumber("M2","M2","M2")
-    ]
+        hs.Hopnumber("M1","M1","M1"),
+        hs.Hopnumber("M2","M2","M2"),
+    ],
     output=[
         hs.Hopnumber("M3","M3","M3")
     ]
