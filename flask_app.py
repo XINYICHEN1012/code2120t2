@@ -25,8 +25,7 @@ def hello_world():
     outputs=[
         hs.HopsNumber("M3","M3","M3")
     ]
-)
-
+#)
 ##@app.route("/urlend")
 ##def np_addMatrix(M1,M2):
    ## import numpy as np
@@ -43,8 +42,8 @@ def hello_world():
     name= "clear_dictionary",
     description="clear_dictionary",
     inputs=[
-        hs.HopsString("UCL"),
-        hs.HopsNumber("PercentBasement", access=hs.HopsParamAccess.LIST),
+        hs.HopsString("url"),
+        hs.HopsNumber("PercentBasement"),
     ],
     outputs=[
         hs.HopsString("information")
