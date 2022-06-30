@@ -1,7 +1,5 @@
-import uu
 from flask import Flask
 import ghhops_server as hs
-from matplotlib.font_manager import json_dump
 
 
 app = Flask(__name__)
