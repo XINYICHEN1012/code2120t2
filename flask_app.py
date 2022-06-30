@@ -1,5 +1,4 @@
 from flask import Flask
-from numpy import geomspace
 import ghhops_server as hs
 
 
