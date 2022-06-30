@@ -4,6 +4,7 @@ import ghhops_server as hs
 
 
 app = Flask(__name__)
+hops = hs.Hops(app)
 
 @app.route("/")
 def hello_world():
