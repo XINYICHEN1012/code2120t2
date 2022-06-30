@@ -37,26 +37,13 @@ def hello_world():
    #  print(result)
    # return list(result)
 
-@hops.component(
-    "/clear_dictionary",
-    name= "clear_dictionary",
-    description="clear_dictionary",
-    inputs=[
-        hs.HopsString("url"),
-        hs.HopsNumber("PercentBasement"),
-    ],
-    outputs=[
-        hs.HopsString("information")
-    ]
-)
-
-@app.route("/urlend")
-def buildinginfor_basement(PercentBasement):
+##clean dictionary
+@app.route('/')
+def buildinginfor_basement():
     url = 'https://data.townofcary.org/api/records/1.0/search/?dataset=building-points&q=&rows=20&sort=-rooms&facet=building_type&facet=building_sub_type&facet=bldgstyle&facet=yearbuilt&facet=storyheight&facet=basement&facet=utilities&refine.building_sub_type=2+Family&refine.building_sub_type=3+Family&refine.building_sub_type=4+Family&refine.building_sub_type=Multi-Family&refine.building_sub_type=Single+Family&refine.building_type=Residential'
     r = requests.get(url)
-    for option in r.json()[PercentBasement]:
-        v = r(PercentBasement)
-    print(v)
+    for option in r.json()["building-points","building_sub_type","basement"]:
+      print(option)
 
 if __name__ == '__main__':
     app.run()
