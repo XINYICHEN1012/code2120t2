@@ -37,4 +37,4 @@ def np_addmatrix(M1,M2):
 
 
 if __name__ == '__main__':
-    main()
+    app.run()
