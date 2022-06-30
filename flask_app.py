@@ -8,19 +8,19 @@ app = Flask(__name__)
 hops = hs.Hops(app)
 
 
-file_name = 'building-points.csv'
-CSV_URL = 'https://data.townofcary.org/api/records/1.0/search/?dataset=building-points&q=&rows=20&sort=-rooms&facet=building_type&facet=building_sub_type&facet=bldgstyle&facet=yearbuilt&facet=storyheight&facet=basement&facet=utilities&refine.building_sub_type=2+Family&refine.building_sub_type=3+Family&refine.building_sub_type=4+Family&refine.building_sub_type=Multi-Family&refine.building_sub_type=Single+Family&refine.building_type=Residential'
+##file_name = 'building-points.csv'
+##CSV_URL = 'https://data.townofcary.org/api/records/1.0/search/?dataset=building-points&q=&rows=20&sort=-rooms&facet=building_type&facet=building_sub_type&facet=bldgstyle&facet=yearbuilt&facet=storyheight&facet=basement&facet=utilities&refine.building_sub_type=2+Family&refine.building_sub_type=3+Family&refine.building_sub_type=4+Family&refine.building_sub_type=Multi-Family&refine.building_sub_type=Single+Family&refine.building_type=Residential'
 
 
-with requests.Session() as s:
-    download = s.get(CSV_URL)
+##with requests.Session() as s:
+   ## download = s.get(CSV_URL)
 
-    decoded_content = download.content.decode('utf-8')
+##    decoded_content = download.content.decode('utf-8')
 
-    cr = csv.reader(decoded_content.splitlines(), delimiter=',')
-    my_list = list(cr)
-    for row in my_list:
-        print(row)
+ ###   cr = csv.reader(decoded_content.splitlines(), delimiter=',')
+###    my_list = list(cr)
+  ###  for row in my_list:
+   ###     print(row)
 
 @app.route("/")
 def hello_world():
@@ -31,8 +31,8 @@ def hello_world():
     name= "np_addMatrix",
     description="np_addMatrix",
     inputs=[
-        hs.HopsNumber("M1","M1","M1",access=hs.HopsParamAccess.LIST),
-        hs.HopsNumber("M2","M2","M2",access=hs.HopsParamAccess.LIST),
+        hs.HopsNumber("M1","M1","M1", access=hs.HopsParamAccess.LIST),
+        hs.HopsNumber("M2","M2","M2", access=hs.HopsParamAccess.LIST),
     ],
     outputs=[
         hs.HopsNumber("M3","M3","M3")
